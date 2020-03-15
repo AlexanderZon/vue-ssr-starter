@@ -99,3 +99,5 @@ Every component within `src/pages` directory can use some special features provi
 `prefetch` also works on the root component (`src/app.vue`) with some restrictions:
 
 * no way to pass component data (only store can be affected).
+
+Credits: [mrTimofey](https://github.com/mrTimofey/vue-ssr-starter)
