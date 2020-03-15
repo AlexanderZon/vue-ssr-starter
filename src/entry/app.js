@@ -1,4 +1,20 @@
 import Vue from 'vue';
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+// import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import '@mdi/font/css/materialdesignicons.css'
+
+Vue.use(Vuetify)
+
+const opts = {
+	icons: {
+		iconfont: 'mdi', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+	},
+}
+
+const vuetify = new Vuetify(opts)
+
+
 import { filenameToCamelCase } from 'src/utils';
 
 // IMPORTANT NOTE: imports order bellow matters if we want CSS related imports to be in desired order
@@ -20,5 +36,5 @@ import createStore from 'src/store';
 export default context => {
 	const store = createStore(context),
 		router = createRouter(context);
-	return new Vue({ store, router, ...app });
+	return new Vue({ vuetify, store, router, ...app });
 };

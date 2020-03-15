@@ -1,3 +1,7 @@
+<template>
+	<not-found></not-found>
+</template>
+
 <script>
 	import NotFound from 'src/components/not-found.vue';
 	export default {
@@ -7,7 +11,3 @@
 		},
 	};
 </script>
-
-<template lang="pug">
-	not-found
-</template>

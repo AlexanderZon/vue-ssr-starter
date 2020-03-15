@@ -1,3 +1,12 @@
+<template>
+	<div>
+		<main>
+			<server-error v-if="serverError" :error="serverError"></server-error>
+			<router-view v-else></router-view>
+		</main>
+	</div>
+</template>
+
 <script>
 	import { mapGetters } from 'vuex';
 	import 'src/styles/reset.styl';
@@ -32,9 +41,3 @@
 	};
 </script>
 
-<template lang="pug">
-	#wrapper
-		main
-			server-error(v-if="serverError" :error="serverError")
-			router-view(v-else)
-</template>
