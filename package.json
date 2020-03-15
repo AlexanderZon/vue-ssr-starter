@@ -4,8 +4,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run build:sprite && node -r dotenv/config index dotenv_config_path=.env.dev",
-    "dev:br": "npm run build:sprite && node -r dotenv/config index dotenv_config_path=.env.br.dev",
-    "dev:es": "npm run build:sprite && node -r dotenv/config index dotenv_config_path=.env.es.dev",
     "start": "cross-env NODE_ENV=production node -r dotenv/config index",
     "lint": "eslint --ext .js --ext .vue ./src",
     "lint:fix": "eslint --ext .js --ext .vue ./src --fix",

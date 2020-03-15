@@ -10,6 +10,9 @@ Includes:
 * Pug
 * SVG sprites builder
 * ESlint with pre-push hook
+* Vuetify Layout
+* Vue i18n Translations
+
 
 ## Getting started
 
@@ -69,10 +72,14 @@ See `setup-proxy.js` for description.
 	* `utils/` - common utility functions
 		* `index` - common utility functions
 		* `ssr` - SSR related functions and mixins
+	* `router/` - router functions
+		* `index` - exports a factory function returning vue-router instance
+		* `routes` - array of routes
+	* `i18n/` - translation functions
+		* `index` - translation functions
 	* `app.vue` - application root component, implicitly mixed with `entry\app`
 	* `http` - exports http client instance (Axios)
 	* `layout.pug` - application HTML layout
-	* `router` - exports a factory function returning vue-router instance
 	* `shared.styl` - globally included stylus file (for variables, mixins, etc.)
 
 ## SSR related component features
