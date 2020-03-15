@@ -1,16 +1,16 @@
 <template>
-    <div>
-        Bar
-    </div>
+  <div>
+    Bar
+  </div>
 </template>
 
 <script>
-export default {
-    name: 'Bar',
-    data(){
-        return {
-            
-        }
-    }
-}
+	export default {
+		name: 'Bar',
+		data() {
+			return {
+
+			};
+		},
+	};
 </script>

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Meta from 'vue-meta';
-import { filenameToCamelCase } from 'src/utils';
-import { prefetchMixin } from 'src/utils/ssr';
+// import { filenameToCamelCase } from 'src/utils';
+// import { prefetchMixin } from 'src/utils/ssr';
 
 Vue.use(Router);
 Vue.use(Meta, {
@@ -69,7 +69,7 @@ Vue.use(Meta, {
 // 	}
 // }
 
-import routes from './routes'
+import routes from './routes';
 
 // catch-all route (404)
 // if (route404) routes.push(route404);

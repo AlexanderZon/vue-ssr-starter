@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "npm run build:sprite && node -r dotenv/config index dotenv_config_path=.env.dev",
     "start": "cross-env NODE_ENV=production node -r dotenv/config index",
-    "lint": "eslint --ext .js --ext .vue ./",
+    "lint": "eslint --ext .js --ext .vue ./src",
+    "lint:fix": "eslint --ext .js --ext .vue ./src --fix",
     "build:sprite": "cross-env NODE_ENV=production node build/svg-sprite.js",
     "build:client": "rimraf ./dist/public && rimraf ./dist/vue-ssr-client-manifest.json && rimraf ./dist/index.html && cross-env NODE_ENV=production wp --config build/webpack/client.js && mv ./dist/public/vue-ssr-client-manifest.json ./dist/vue-ssr-client-manifest.json && mv ./dist/public/index.html ./dist/index.html",
     "build:server": "rimraf ./dist/server && cross-env NODE_ENV=production wp --config build/webpack/server.js",

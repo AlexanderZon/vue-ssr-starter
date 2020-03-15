@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 // import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import '@mdi/font/css/materialdesignicons.css'
+import '@mdi/font/css/materialdesignicons.css';
 
-Vue.use(Vuetify)
-import colors from 'vuetify/lib/util/colors'
+Vue.use(Vuetify);
+import colors from 'vuetify/lib/util/colors';
 
 const opts = {
 	icons: {
@@ -25,9 +25,9 @@ const opts = {
 			},
 		},
 	},
-}
+};
 
-const vuetify = new Vuetify(opts)
+const vuetify = new Vuetify(opts);
 
 
 import { filenameToCamelCase } from 'src/utils';
