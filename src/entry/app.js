@@ -1,8 +1,19 @@
 import Vue from 'vue';
+
+import VueI18n from 'vue-i18n';
+Vue.use(VueI18n);
+import messages from 'src/i18n/index.js';
+
+const i18n = new VueI18n({
+	locale: 'es',
+	messages,
+});
+
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 // import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import '@mdi/font/css/materialdesignicons.css';
+
 
 Vue.use(Vuetify);
 import colors from 'vuetify/lib/util/colors';
@@ -51,5 +62,5 @@ import createStore from 'src/store';
 export default context => {
 	const store = createStore(context),
 		router = createRouter(context);
-	return new Vue({ vuetify, store, router, ...app });
+	return new Vue({ i18n, vuetify, store, router, ...app });
 };
