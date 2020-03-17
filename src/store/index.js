@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import http from '../http';
 
 Vue.use(Vuex);
 
@@ -9,11 +10,25 @@ const fireNotFoundError = (state, message = '404 Not found') => {
 
 // we should return factory for SSR (runInNewContext: false)
 export default () => new Vuex.Store({
+  actions: {
+    fetchConfig: (context) => {
+      return new Promise((resolve, reject) => {
+        http.get('http://localhost:8000/config').then(response => {
+          context.commit('setConfig', response.data);
+          resolve(response.data);
+        }).catch(thrown => {
+          reject(thrown);
+        });
+      });
+    },
+  },
 	state: {
-		serverError: false,
+    serverError: false,
+    config: {},
 	},
 	getters: {
-		serverError: state => state.serverError,
+    serverError: state => state.serverError,
+    getConfig: state => state.config,
 	},
 	mutations: {
 		setError(state, err) {
@@ -23,6 +38,9 @@ export default () => new Vuex.Store({
 		fireNotFoundError,
 		clearError(state) {
 			state.serverError = false;
-		},
+    },
+    setConfig(state, data) {
+      state.config = data;
+    },
 	},
 });

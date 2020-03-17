@@ -10,7 +10,8 @@
     "build:sprite": "cross-env NODE_ENV=production node build/svg-sprite.js",
     "build:client": "rimraf ./dist/public && rimraf ./dist/vue-ssr-client-manifest.json && rimraf ./dist/index.html && cross-env NODE_ENV=production wp --config build/webpack/client.js && mv ./dist/public/vue-ssr-client-manifest.json ./dist/vue-ssr-client-manifest.json && mv ./dist/public/index.html ./dist/index.html",
     "build:server": "rimraf ./dist/server && cross-env NODE_ENV=production wp --config build/webpack/server.js",
-    "build": "npm run lint && npm run build:sprite && npm run build:client && npm run build:server"
+    "build": "npm run lint && npm run build:sprite && npm run build:client && npm run build:server",
+    "build:withoutlint": "npm run build:sprite && npm run build:client && npm run build:server"
   },
   "husky": {
     "hooks": {
@@ -25,6 +26,7 @@
     "@mdi/font": "^5.0.45",
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
+    "js-cookie": "^2.2.1",
     "polka": "^0.5.2",
     "serialize-javascript": "^3.0.0",
     "serve-favicon": "^2.5.0",

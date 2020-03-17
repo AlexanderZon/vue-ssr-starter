@@ -2,7 +2,7 @@
   <v-container>
     <v-card>
       <v-card-text>
-        {{ $t('menu.dashboard') }}
+        {{ $t('menu.dashboard') }}. Token: {{ $root.$options.__OAUTH_TOKEN__ }}
       </v-card-text>
     </v-card>
   </v-container>

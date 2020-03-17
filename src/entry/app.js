@@ -1,5 +1,8 @@
 import Vue from 'vue';
 
+import Cookies from 'js-cookie';
+const oauthToken = Cookies.get('oauth_token');
+
 import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
 import messages from 'src/i18n/index.js';
@@ -62,5 +65,5 @@ import createStore from 'src/store';
 export default context => {
 	const store = createStore(context),
 		router = createRouter(context);
-	return new Vue({ i18n, vuetify, store, router, ...app });
+	return new Vue({ i18n, vuetify, store, router, ...app, __OAUTH_TOKEN__: oauthToken });
 };
